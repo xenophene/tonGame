@@ -30,6 +30,9 @@ public class Main {
 	 */
 	public void startGame() {
 		while(!h1.isEmpty() && !h2.isEmpty()) {
+			System.out.println("Player1 size:" + h1.getSize() 
+					+ ",Player2 size:" + h2.getSize()
+					+ ",Floor size:" + floor.size());
 			if (turn == 0) {
 				turn = 1;
 				Card c1 = h1.nextCard();
@@ -40,7 +43,6 @@ public class Main {
 				if (c1.isSameValue(c2)) {
 					h1.addCards(floor);
 					floor.clear();
-					System.out.println("Player 1 got a match!");
 					turn = 0;
 				}
 			}
@@ -54,13 +56,9 @@ public class Main {
 				if (c1.isSameValue(c2)) {
 					h2.addCards(floor);
 					floor.clear();
-					System.out.println("Player 2 got a match!");
 					turn = 1;
 				}
 			}
-			System.out.println("Player1 size: " + h1.getSize() 
-					+ " Player2 size: " + h2.getSize()
-					+ " Floor size: " + floor.size());
 		}
 	}
 	public Main() {

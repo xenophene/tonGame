@@ -24,6 +24,8 @@ public class Card {
 	 * @return if the values are same
 	 */
 	public boolean isSameValue(Card c) {
+		if (c == null)
+			return false;
 		return this.value == c.getValue();
 	}
 	/**
@@ -33,6 +35,12 @@ public class Card {
 	 * @return
 	 */
 	public boolean areSameValue(Card c1, Card c2) {
+		if (c1 == null || c2 == null)
+			return false;
 		return c1.getValue() == c2.getValue();
+	}
+	public String toString() {
+		return (Deck.faceValue[this.value] + 
+				" of " + Deck.suitValue[this.suit]);
 	}
 }

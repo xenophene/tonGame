@@ -9,17 +9,17 @@ import java.util.Vector;
  */
 public class Hand {
 	private Vector<Card> cards;
-	private int size;
 	public Hand() {
 		cards = new Vector<Card>();
-		size = 0;
 	}
 	public void addCard(Card c) {
 		cards.add(c);
-		size++;
 	}
 	public int getSize() {
-		return this.size;
+		return cards.size();
+	}
+	public boolean isEmpty() {
+		return cards.isEmpty();
 	}
 	public void addCards(Vector<Card> nc) {
 		cards.addAll(nc);

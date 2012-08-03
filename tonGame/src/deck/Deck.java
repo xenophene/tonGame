@@ -2,6 +2,7 @@ package deck;
 import deck.Card;
 import deck.Hand;
 import java.util.Random;
+import java.util.Vector;
 public class Deck {
 	private Card[] cards;
 	private static final int size = 52;
@@ -69,6 +70,18 @@ public class Deck {
 		for (int i = 0; i < size / 2; i++) {
 			h1.addCard(this.dealCard());
 			h2.addCard(this.dealCard());
+		}
+	}
+	/**
+	 * Deal cards off to a set of n players
+	 * @param hands Vector of hands one for each player
+	 */
+	public void dealCards(Vector<Hand> hands) {
+		int n = hands.size();
+		for (int i = 0; i < size / n; i++) {
+			for (int j = 0; j < n; j++) {
+				hands.elementAt(j).addCard(this.dealCard());
+			}
 		}
 	}
 	public void print() {

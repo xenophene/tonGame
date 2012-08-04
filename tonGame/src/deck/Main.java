@@ -64,7 +64,8 @@ public class Main {
 			}
 		}
 	}
-	public Main(int nop) {
+	// make an assumption that 
+	public Main(int nop, int proportion) {
 		hands = new Vector<Hand>();
 		for (int i = 0; i < nop; i++)
 			hands.add(new Hand());
@@ -76,7 +77,7 @@ public class Main {
 		startGame();
 	}
 	public static void main(String[] args) {
-		Main m = new Main(Integer.parseInt(args[0]));
+		Main m = new Main(Integer.parseInt(args[0]), Integer.parseInt(args[1]));
 	}
 
 }

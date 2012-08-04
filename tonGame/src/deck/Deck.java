@@ -73,6 +73,22 @@ public class Deck {
 		}
 	}
 	/**
+	 * Deals the cards to the hands in an unfair manner as
+	 * decided by proportions vector
+	 * @param hands Then hands to be dealt
+	 * @param proportions The proportion of cards to deal to hands
+	 */
+	public void dealCardsUnfair(Vector<Hand> hands, 
+			Vector<Integer> proportions) {
+		int n = hands.size();
+		for (int i = 0; i < n; i++) {
+			int share = proportions.get(i).intValue();
+			for (int j = 0; j < share; j++) {
+				hands.elementAt(i).addCard(this.dealCard());
+			}
+		}
+	}
+	/**
 	 * Deal cards off to a set of n players
 	 * @param hands Vector of hands one for each player
 	 */
